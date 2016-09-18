@@ -2,10 +2,10 @@ FROM openjdk:8u102-jdk
 MAINTAINER David Asabina <vid@bina.me>
 ARG SBT_VERSION="0.13.12"
 ARG SCALA_VERSION="2.11.8"
-# Copy local deb 2.11.8 since the scala-lang.org endpoints are not secure.
-# Use fingerprints in the future to allow downloads from unsecure endpoints.
-COPY scala-2.11.8.deb /tmp/scala-2.11.8.deb
+# Use fingerprints in the future to verify authenticity of payloads.
 RUN \
+  wget https://downloads.lightbend.com/scala/${SCALA_VERSION}/scala-${SCALA_VERSION}.deb -O \
+    /tmp/scala-${SCALA_VERSION}.deb && \
   dpkg -i /tmp/scala-${SCALA_VERSION}.deb && \
   apt-get update && \
   apt-get install -f && \
