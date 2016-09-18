@@ -34,11 +34,8 @@ will not be persisted unless
 
 Since `sbt` will most likely pull some packages the first time you start sbt
 in a new project, you may want to commit the results by opening a new terminal
-session while the container is still running and executing
-
-```
-docker commit $NAME_OF_HASH_OF_THE_CONTAINER $COMMITED_IMAGE_NAME[:$TAG]
-```.
+session while the container is still running and executing 
+`docker commit $NAME_OF_HASH_OF_THE_CONTAINER $COMMITED_IMAGE_NAME[:$TAG]`.
 
 > The scala build tool pulls packages into another directory in the container,
 therefore unless you choose to commit the state of the container, you will
