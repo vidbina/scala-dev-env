@@ -4,7 +4,7 @@ ARG SBT_VERSION="0.13.12"
 ARG SCALA_VERSION="2.11.8"
 # Copy local deb 2.11.8 since the scala-lang.org endpoints are not secure.
 # Use fingerprints in the future to allow downloads from unsecure endpoints.
-COPY scala-${SCALA_VERSION}.deb /tmp/scala-${SCALA_VERSION}.deb
+COPY scala-2.11.8.deb /tmp/scala-2.11.8.deb
 RUN \
   dpkg -i /tmp/scala-${SCALA_VERSION}.deb && \
   apt-get update && \
