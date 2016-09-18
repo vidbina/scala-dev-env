@@ -9,7 +9,7 @@ RUN \
   dpkg -i /tmp/scala-${SCALA_VERSION}.deb && \
   apt-get update && \
   apt-get install -f && \
-  echo "export SCALA_VERSION=${SCALA_VERSION}" >> /root/.bashrc && \
+  echo "export SCALA_VERSION=${SCALA_VERSION}" >> /root/.bashrc
 COPY sbt.bash /usr/local/bin/sbt
 RUN \
   wget -O /tmp/sbt-${SBT_VERSION}.zip \
