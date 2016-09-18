@@ -1,8 +1,7 @@
 FROM openjdk:8u102-jdk
 MAINTAINER David Asabina <vid@bina.me>
-ARG SBT_VERSION 
-ARG SCALA_VERSION "2.11.8"
-ENV SBT_OPTS ""
+ARG SBT_VERSION="0.13.12"
+ARG SCALA_VERSION="2.11.8"
 # Copy local deb 2.11.8 since the scala-lang.org endpoints are not secure.
 # Use fingerprints in the future to allow downloads from unsecure endpoints.
 COPY scala-${SCALA_VERSION}.deb /tmp/scala-${SCALA_VERSION}.deb
