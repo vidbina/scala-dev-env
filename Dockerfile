@@ -18,9 +18,5 @@ RUN \
   echo "export SBT_VERSION=${SBT_VERSION}" >> /root/.bashrc && \
   chmod +x /usr/local/bin/sbt && \
   sbt 
-#RUN \
-#  cd /tmp && git clone https://github.com/scala/scala.git && cd scala && \
-#  git checkout v${SCALA_VERSION} && \
-#  sbt dist/mkBin
 WORKDIR /src
-CMD /usr/local/bin/sbt
+CMD /bin/bash -lc /usr/local/bin/sbt
